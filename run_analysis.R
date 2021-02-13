@@ -64,4 +64,4 @@ subjectIds <- rbind(trainids, testids) # put the test subject ids on top of the 
 meanStdData <- mutate(meanStdData, subject_ids = subjectIds[,1]) # add the subject id column to the dataset
 df <- group_by(meanStdData, activity, subject_ids) # create a new dataset, grouping first by activity and then by subject id
 averages <- df %>% summarize(across(is.numeric, mean)) # get the average of each group's numeric columns
-
+write.csv(averages, 'tidyAverages.csv')
