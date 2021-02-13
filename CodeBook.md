@@ -1,7 +1,17 @@
-DATA DICTIONARY - Human Activity Recognition Using Smartphones Dataset
+---
+title: "Human Activity Recognition Using Smartphones Dataset"
+author: "Carolyn Cartwright"
+date: '2021-02-13'
+output: html_document
+---
 
-Feature Selection 
-=================
+This dataset is a subset of the original dataset found on the  [UCI](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#) website.
+
+The original dataset was reduced to contain only those features whose names included "mean" or "std".
+
+The first section describes how the features were selected in the original data set. The second section describes how the number of original features was reduced into a smaller set and the names transformed to be more descriptive.
+
+## Feature Selection 
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
 These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. 
@@ -18,42 +28,43 @@ fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fB
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
+* tBodyAcc-XYZ
+* tGravityAcc-XYZ
+* tBodyAccJerk-XYZ
+* tBodyGyro-XYZ
+* tBodyGyroJerk-XYZ
+* tBodyAccMag
+* tGravityAccMag
+* tBodyAccJerkMag
+* tBodyGyroMag
+* tBodyGyroJerkMag
+* fBodyAcc-XYZ
+* fBodyAccJerk-XYZ
+* fBodyGyro-XYZ
+* fBodyAccMag
+* fBodyAccJerkMag
+* fBodyGyroMag
+* fBodyGyroJerkMag
 
-The original dataset can be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
 
-The original dataset was reduced to contain only those features whose names included "mean" or "std".
+## Feature Reduction
 
-Below is a list of the original feature names filtered by "mean" and "std" followed by a more understandable descriptive name based
-on the information in the features_info.txt file.
+The original feature names were filtered so that only those names including "mean" or "std" remain. 
+
+Transformations were made on the feature names based on the information in the features_info.txt file. These names are more understandable to a person reading the name.
 
 Transformations applied include:
-Acc -> acceleration
-Gyro -> gyroscope
-std -> standared_deviation
-Mag -> magnitude
-t (at the beginning of the name) -> time
-f (at the beginning of the name) -> frequency
 
-Features [1 - 79] are numeric and are the measurements taken using the smartphone.
-Feature [80] is the activity the person was doing when the measurement was taken
-Feature [81] is the subject's identification number
+* Acc -> acceleration
+* Gyro -> gyroscope
+* std -> standared_deviation
+* Mag -> magnitude
+* t (at the beginning of the name) -> time
+* f (at the beginning of the name) -> frequency
+
+Features [1 - 79] are numeric and are the measurements taken using the smartphone.  
+Feature [80] is a character vector which indicates the activity the person was doing when the measurement was taken  
+Feature [81] is numeric and contains the identification number of the subject whose measurements are contained in the row.  
 
 
 The set of variables that were estimated from these signals are: 
@@ -64,172 +75,175 @@ meanFreq(): Weighted average of the frequency components to obtain a mean freque
 
 The complete feature vector is listed below:
 
- [1]"tBodyAcc-mean()-X"
+ [1] "tBodyAcc-mean()-X":  
 	 "time_of_body_acceleration_signal_mean_of_X_coordinate"                        
- [2] "tBodyAcc-mean()-Y"
+ [2] "tBodyAcc-mean()-Y":  
 	"time_of_body_acceleration_signal_mean_of_Y_coordinate"                        
- [3] "tBodyAcc-mean()-Z"
+ [3] "tBodyAcc-mean()-Z":  
 	"time_of_body_acceleration_signal_mean_of_Z_coordinate"                        
- [4] "tBodyAcc-std()-X"
+ [4] "tBodyAcc-std()-X":  
 	"time_of_body_acceleration_signal_standard_deviation_of_X_coordinate"          
- [5] "tBodyAcc-std()-Y"
+ [5] "tBodyAcc-std()-Y":  
 	"time_of_body_acceleration_signal_standard_deviation_of_Y_coordinate"          
- [6] "tBodyAcc-std()-Z"
+ [6] "tBodyAcc-std()-Z":  
 	"time_of_body_acceleration_signal_standard_deviation_of_Z_coordinate"          
- [7] "tGravityAcc-mean()-X"
+ [7] "tGravityAcc-mean()-X":  
 	"time_of_gravity_acceleration_signal_mean_of_X_coordinate"                     
- [8] "tGravityAcc-mean()-Y"
+ [8] "tGravityAcc-mean()-Y":  
 	"time_of_gravity_acceleration_signal_mean_of_Y_coordinate"                     
- [9] "tGravityAcc-mean()-Z"
+ [9] "tGravityAcc-mean()-Z":  
 	"time_of_gravity_acceleration_signal_mean_of_Z_coordinate"                     
-[10] "tGravityAcc-std()-X"
+[10] "tGravityAcc-std()-X":  
 	"time_of_gravity_acceleration_signal_standard_deviation_of_X_coordinate"       
-[11] "tGravityAcc-std()-Y"
+[11] "tGravityAcc-std()-Y":  
 	"time_of_gravity_acceleration_signal_standard_deviation_of_Y_coordinate"       
-[12] "tGravityAcc-std()-Z"
+[12] "tGravityAcc-std()-Z":  
 	"time_of_gravity_acceleration_signal_standard_deviation_of_Z_coordinate"       
-[13] "tBodyAccJerk-mean()-X"
+[13] "tBodyAccJerk-mean()-X":  
 	"time_of_body_acceleration_jerk_signal_mean_of_X_coordinate"                   
-[14] "tBodyAccJerk-mean()-Y"
+[14] "tBodyAccJerk-mean()-Y":  
 	"time_of_body_acceleration_jerk_signal_mean_of_Y_coordinate"                   
-[15] "tBodyAccJerk-mean()-Z"
+[15] "tBodyAccJerk-mean()-Z":  
 	"time_of_body_acceleration_jerk_signal_mean_of_Z_coordinate"                   
-[16] "tBodyAccJerk-std()-X"
+[16] "tBodyAccJerk-std()-X":  
 	"time_of_body_acceleration_jerk_signal_standard_deviation_of_X_coordinate"     
-[17] "tBodyAccJerk-std()-Y"
+[17] "tBodyAccJerk-std()-Y":  
 	"time_of_body_acceleration_jerk_signal_standard_deviation_of_Y_coordinate"     
-[18] "tBodyAccJerk-std()-Z"
+[18] "tBodyAccJerk-std()-Z":  
 	"time_of_body_acceleration_jerk_signal_standard_deviation_of_Z_coordinate"     
-[19] "tBodyGyro-mean()-X"
+[19] "tBodyGyro-mean()-X":  
 	"time_of_body_gyroscope_signal_mean_of_X_coordinate"                           
-[20] "tBodyGyro-mean()-Y"
+[20] "tBodyGyro-mean()-Y":  
 	"time_of_body_gyroscope_signal_mean_of_Y_coordinate"                           
-[21] "tBodyGyro-mean()-Z"
+[21] "tBodyGyro-mean()-Z":  
 	"time_of_body_gyroscope_signal_mean_of_Z_coordinate"                           
-[22] "tBodyGyro-std()-X"
+[22] "tBodyGyro-std()-X":  
 	"time_of_body_gyroscope_signal_standard_deviation_of_X_coordinate"             
-[23] "tBodyGyro-std()-Y"
+[23] "tBodyGyro-std()-Y":  
 	"time_of_body_gyroscope_signal_standard_deviation_of_Y_coordinate"             
-[24] "tBodyGyro-std()-Z"
+[24] "tBodyGyro-std()-Z":  
 	"time_of_body_gyroscope_signal_standard_deviation_of_Z_coordinate"             
-[25] "tBodyGyroJerk-mean()-X"
+[25] "tBodyGyroJerk-mean()-X":  
 	"time_of_body_gyroscope_jerk_signal_mean_of_X_coordinate"                      
-[26] "tBodyGyroJerk-mean()-Y"
+[26] "tBodyGyroJerk-mean()-Y":  
 	"time_of_body_gyroscope_jerk_signal_mean_of_Y_coordinate"                      
-[27] "tBodyGyroJerk-mean()-Z"
+[27] "tBodyGyroJerk-mean()-Z":  
 	"time_of_body_gyroscope_jerk_signal_mean_of_Z_coordinate"                      
-[28] "tBodyGyroJerk-std()-X"
+[28] "tBodyGyroJerk-std()-X":  
 	"time_of_body_gyroscope_jerk_signal_standard_deviation_of_X_coordinate"        
-[29] "tBodyGyroJerk-std()-Y"
+[29] "tBodyGyroJerk-std()-Y":  
 	"time_of_body_gyroscope_jerk_signal_standard_deviation_of_Y_coordinate"        
-[30] "tBodyGyroJerk-std()-Z"
+[30] "tBodyGyroJerk-std()-Z":  
 	"time_of_body_gyroscope_jerk_signal_standard_deviation_of_Z_coordinate"        
-[31] "tBodyAccMag-mean()"
+[31] "tBodyAccMag-mean()":  
 	"time_of_body_acceleration_magnitude_signal_mean"                              
-[32] "tBodyAccMag-std()"
+[32] "tBodyAccMag-std()":  
 	"time_of_body_acceleration_magnitude_signal_standard_deviation"                
-[33] "tGravityAccMag-mean()"
+[33] "tGravityAccMag-mean()":  
 	"time_of_gravity_acceleration_magnitude_signal_mean"                           
-[34] "tGravityAccMag-std()"
+[34] "tGravityAccMag-std()":  
 	"time_of_gravity_acceleration_magnitude_signal_standard_deviation"             
-[35] "tBodyAccJerkMag-mean()"
+[35] "tBodyAccJerkMag-mean()":  
 	"time_of_body_acceleration_jerk_magnitude_signal_mean"                         
-[36] "tBodyAccJerkMag-std()"
+[36] "tBodyAccJerkMag-std()":  
 	"time_of_body_acceleration_jerk_magnitude_signal_standard_deviation"           
-[37] "tBodyGyroMag-mean()"
+[37] "tBodyGyroMag-mean()":  
 	"time_of_body_gyroscope_magnitude_signal_mean"                                 
-[38] "tBodyGyroMag-std()"
+[38] "tBodyGyroMag-std()":  
 	"time_of_body_gyroscope_magnitude_signal_standard_deviation"                   
-[39] "tBodyGyroJerkMag-mean()"
+[39] "tBodyGyroJerkMag-mean()":  
 	"time_of_body_gyroscope_jerk_magnitude_signal_mean"                            
-[40] "tBodyGyroJerkMag-std()"
+[40] "tBodyGyroJerkMag-std()":  
 	"time_of_body_gyroscope_jerk_magnitude_signal_standard_deviation"              
-[41] "fBodyAcc-mean()-X"
+[41] "fBodyAcc-mean()-X":  
 	"frequency_of_body_acceleration_signal_mean_of_X_coordinate"                   
-[42] "fBodyAcc-mean()-Y"
+[42] "fBodyAcc-mean()-Y":  
 	"frequency_of_body_acceleration_signal_mean_of_Y_coordinate"                   
-[43] "fBodyAcc-mean()-Z"
+[43] "fBodyAcc-mean()-Z":  
 	"frequency_of_body_acceleration_signal_mean_of_Z_coordinate"                   
-[44] "fBodyAcc-std()-X"
+[44] "fBodyAcc-std()-X":  
 	"frequency_of_body_acceleration_signal_standard_deviation_of_X_coordinate"     
-[45] "fBodyAcc-std()-Y"
+[45] "fBodyAcc-std()-Y":  
 	"frequency_of_body_acceleration_signal_standard_deviation_of_Y_coordinate"     
-[46] "fBodyAcc-std()-Z"
+[46] "fBodyAcc-std()-Z":  
 	"frequency_of_body_acceleration_signal_standard_deviation_of_Z_coordinate"     
-[47] "fBodyAcc-meanFreq()-X"
+[47] "fBodyAcc-meanFreq()-X":  
 	"frequency_of_body_acceleration_signal_mean_frequency_of_X_coordinate"         
-[48] "fBodyAcc-meanFreq()-Y"
+[48] "fBodyAcc-meanFreq()-Y":  
 	"frequency_of_body_acceleration_signal_mean_frequency_of_Y_coordinate"         
-[49] "fBodyAcc-meanFreq()-Z"
+[49] "fBodyAcc-meanFreq()-Z":  
 	"frequency_of_body_acceleration_signal_mean_frequency_of_Z_coordinate"         
-[50] "fBodyAccJerk-mean()-X"
+[50] "fBodyAccJerk-mean()-X":  
 	"frequency_of_body_acceleration_jerk_signal_mean_of_X_coordinate"              
-[51] "fBodyAccJerk-mean()-Y"
+[51] "fBodyAccJerk-mean()-Y":  
 	"frequency_of_body_acceleration_jerk_signal_mean_of_Y_coordinate"              
-[52] "fBodyAccJerk-mean()-Z"
+[52] "fBodyAccJerk-mean()-Z":  
 	"frequency_of_body_acceleration_jerk_signal_mean_of_Z_coordinate"              
-[53] "fBodyAccJerk-std()-X"
-	"frequency_of_body_acceleration_jerk_signal_standard_deviation_of_X_coordinate"
-[54] "fBodyAccJerk-std()-Y"
-	"frequency_of_body_acceleration_jerk_signal_standard_deviation_of_Y_coordinate"
-[55] "fBodyAccJerk-std()-Z"
-	"frequency_of_body_acceleration_jerk_signal_standard_deviation_of_Z_coordinate"
-[56] "fBodyAccJerk-meanFreq()-X"
+[53] "fBodyAccJerk-std()-X":  
+	"frequency_of_body_acceleration_jerk_signal_standard_deviation_of_X_coordinate"  
+[54] "fBodyAccJerk-std()-Y":  
+	"frequency_of_body_acceleration_jerk_signal_standard_deviation_of_Y_coordinate"  
+[55] "fBodyAccJerk-std()-Z":  
+	"frequency_of_body_acceleration_jerk_signal_standard_deviation_of_Z_coordinate"    
+[56] "fBodyAccJerk-meanFreq()-X":  
 	"frequency_of_body_acceleration_jerk_signal_mean_frequency_of_X_coordinate"    
-[57] "fBodyAccJerk-meanFreq()-Y"
+[57] "fBodyAccJerk-meanFreq()-Y":  
 	"frequency_of_body_acceleration_jerk_signal_mean_frequency_of_Y_coordinate"    
-[58] "fBodyAccJerk-meanFreq()-Z"
+[58] "fBodyAccJerk-meanFreq()-Z":  
 	"frequency_of_body_acceleration_jerk_signal_mean_frequency_of_Z_coordinate"    
-[59] "fBodyGyro-mean()-X"
+[59] "fBodyGyro-mean()-X":  
 	"frequency_of_body_gyroscope_signal_mean_of_X_coordinate"                      
-[60] "fBodyGyro-mean()-Y"
+[60] "fBodyGyro-mean()-Y":  
 	"frequency_of_body_gyroscope_signal_mean_of_Y_coordinate"                      
-[61] "fBodyGyro-mean()-Z"
+[61] "fBodyGyro-mean()-Z":  
 	"frequency_of_body_gyroscope_signal_mean_of_Z_coordinate"                      
-[62] "fBodyGyro-std()-X"
+[62] "fBodyGyro-std()-X":  
 	"frequency_of_body_gyroscope_signal_standard_deviation_of_X_coordinate"        
-[63] "fBodyGyro-std()-Y"
+[63] "fBodyGyro-std()-Y":  
 	"frequency_of_body_gyroscope_signal_standard_deviation_of_Y_coordinate"        
-[64] "fBodyGyro-std()-Z"
+[64] "fBodyGyro-std()-Z":  
 	"frequency_of_body_gyroscope_signal_standard_deviation_of_Z_coordinate"        
-[65] "fBodyGyro-meanFreq()-X"
+[65] "fBodyGyro-meanFreq()-X":  
 	"frequency_of_body_gyroscope_signal_mean_frequency_of_X_coordinate"            
-[66] "fBodyGyro-meanFreq()-Y"
+[66] "fBodyGyro-meanFreq()-Y":  
 	"frequency_of_body_gyroscope_signal_mean_frequency_of_Y_coordinate"            
-[67] "fBodyGyro-meanFreq()-Z"
+[67] "fBodyGyro-meanFreq()-Z":  
 	"frequency_of_body_gyroscope_signal_mean_frequency_of_Z_coordinate"            
-[68] "fBodyAccMag-mean()"
+[68] "fBodyAccMag-mean()":  
 	"frequency_of_body_acceleration_magnitude_signal_mean"                         
-[69] "fBodyAccMag-std()"
+[69] "fBodyAccMag-std()":  
 	"frequency_of_body_acceleration_magnitude_signal_standard_deviation"           
-[70] "fBodyAccMag-meanFreq()"
+[70] "fBodyAccMag-meanFreq()":  
 	"frequency_of_body_acceleration_magnitude_signal_mean_frequency"               
-[71] "fBodyBodyAccJerkMag-mean()"
+[71] "fBodyBodyAccJerkMag-mean()":  
 	"frequency_of_body_body_acceleration_jerk_magnitude_signal_mean"               
-[72] "fBodyBodyAccJerkMag-std()"
-	"frequency_of_body_body_acceleration_jerk_magnitude_signal_standard_deviation" 
-[73] "fBodyBodyAccJerkMag-meanFreq()"
+[72] "fBodyBodyAccJerkMag-std()":  
+	"frequency_of_body_body_acceleration_jerk_magnitude_signal_standard_deviation"   
+[73] "fBodyBodyAccJerkMag-meanFreq()":  
 	"frequency_of_body_body_acceleration_jerk_magnitude_signal_mean_frequency"     
-[74] "fBodyBodyGyroMag-mean()"
+[74] "fBodyBodyGyroMag-mean()":  
 	"frequency_of_body_body_gyroscope_magnitude_signal_mean"                       
-[75] "fBodyBodyGyroMag-std()"
+[75] "fBodyBodyGyroMag-std()":  
 	"frequency_of_body_body_gyroscope_magnitude_signal_standard_deviation"         
-[76] "fBodyBodyGyroMag-meanFreq()"
+[76] "fBodyBodyGyroMag-meanFreq()":  
 	"frequency_of_body_body_gyroscope_magnitude_signal_mean_frequency"             
-[77] "fBodyBodyGyroJerkMag-mean()"
+[77] "fBodyBodyGyroJerkMag-mean()":  
 	"frequency_of_body_body_gyroscope_jerk_magnitude_signal_mean"                  
-[78] "fBodyBodyGyroJerkMag-std()"
+[78] "fBodyBodyGyroJerkMag-std()":  
 	"frequency_of_body_body_gyroscope_jerk_magnitude_signal_standard_deviation"    
-[79] "fBodyBodyGyroJerkMag-meanFreq()"
-	"frequency_of_body_body_gyroscope_jerk_magnitude_signal_mean_frequency"
-[80] "activity"
-	The position the subject was in when the measurement was taken
-	1 WALKING
-	2 WALKING_UPSTAIRS
-	3 WALKING_DOWNSTAIRS
-	4 SITTING
-	5 STANDING
-	6 LAYING
-[81] "subject_ids"
+[79] "fBodyBodyGyroJerkMag-meanFreq()":  
+	"frequency_of_body_body_gyroscope_jerk_magnitude_signal_mean_frequency"  
+[80] "activity":  
+	This feature describes the position that the subject was in when the measurement was taken.
+	
+	1. WALKING
+	2. WALKING_UPSTAIRS
+	3. WALKING_DOWNSTAIRS
+	4. SITTING
+	5. STANDING
+	6. LAYING
+	
+[81] "subject_ids":  
 	The id of the subject being tested.
 	Values: 1 - 30
+
